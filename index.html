@@ -1,110 +1,158 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoBottle Smart</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>EcoBottle Smart - O futuro tem sede de inovação</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; }
+        .font-brand {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Estilos para as gotas de água */
+        .water-drops-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Permite clicar nos elementos atrás das gotas */
+            overflow: hidden; /* Garante que as gotas fiquem dentro da tela */
+            z-index: -1; /* Fica no fundo, atrás do conteúdo */
+        }
+
+        .water-drops-container div {
+            position: absolute;
+            bottom: 100%;
+            width: 15px; /* Tamanho da gota */
+            height: 15px;
+            background-color: rgba(98, 152, 139, 0.4); /* Cor da gota, com transparência */
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        .drop-1 {
+            left: 20%;
+            animation-delay: 0s;
+            animation-duration: 10s;
+        }
+
+        .drop-2 {
+            left: 45%;
+            animation-delay: 2s;
+            animation-duration: 8s;
+        }
+
+        .drop-3 {
+            left: 70%;
+            animation-delay: 4s;
+            animation-duration: 12s;
+        }
+
+        .drop-4 {
+            left: 90%;
+            animation-delay: 6s;
+            animation-duration: 9s;
+        }
+
+        /* Animação de queda */
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+            }
+            95% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-green-100 to-blue-100 p-4 md:p-8">
-    <div class="w-full max-w-4xl mx-auto">
-        <!-- Header -->
-        <header class="flex items-center justify-center mb-8">
-            <div class="text-center">
-                <p class="text-lg text-[#62988b] font-medium mb-2">"O futuro tem sede de inovação"</p>
-                <div class="flex items-center justify-center">
-                    <div class="w-16 h-16 rounded-full bg-[#62988b] flex items-center justify-center mr-4">
-                        <i class="fas fa-tint text-white text-xl"></i>
-                    </div>
-                    <h1 class="text-3xl font-bold text-[#62988b]">EcoBottle</h1>
-                </div>
-            </div>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <div class="water-drops-container">
+        <div class="drop-1"></div>
+        <div class="drop-2"></div>
+        <div class="drop-3"></div>
+        <div class="drop-4"></div>
+    </div>
+    <div class="container mx-auto max-w-4xl px-4">
+        <header class="flex flex-col items-center justify-center text-center py-8">
+            <h1 class="text-4xl font-extrabold text-[#62988b]">EcoBottle</h1>
+            <p class="text-xl text-gray-600 mt-2">O futuro tem sede de inovação</p>
         </header>
 
-        <!-- Hero Section -->
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-green-800 mb-4">EcoBottle Smart</h2>
-            <p class="text-xl text-blue-600 mb-6">Hidratação Inteligente e Sustentável</p>
-            <p class="text-gray-700 text-lg mb-8 max-w-2xl mx-auto">
-                A garrafa que cuida de você e do planeta. Feita com materiais 100% reciclados, 
-                com sensor inteligente de hidratação e tecnologia NFC para dicas de sustentabilidade.
-            </p>
-            <div class="flex justify-center gap-4 mb-12">
-                <button class="bg-white hover:bg-gray-100 text-[#62988b] border border-[#62988b] px-8 py-3 rounded-md font-medium">Comprar Agora</button>
-                <button class="border border-[#62988b] text-[#62988b] px-8 py-3 rounded-md font-medium">Saiba Mais</button>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-16">
+            <div class="text-center md:text-left">
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-[#62988b] leading-tight">
+                    Hidrate-se com inteligência, cuide do planeta.
+                </h2>
+                <p class="mt-4 text-lg text-gray-600">
+                    A garrafa inteligente que te ajuda a beber água e a salvar o meio ambiente.
+                </p>
+                <a href="#" class="mt-6 inline-block bg-[#62988b] hover:bg-[#4a7a6d] text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                    Descubra a EcoBottle Smart
+                </a>
+            </div>
+            <div class="flex justify-center">
+                <img src="https://via.placeholder.com/400x400.png?text=EcoBottle+Smart" alt="EcoBottle Smart" class="rounded-lg shadow-xl">
             </div>
         </div>
 
-        <!-- Features -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            <div class="border border-[#d0eae4] rounded-lg">
-                <div class="bg-[#d0eae4] p-4 rounded-t-lg">
-                    <div class="w-12 h-12 rounded-full bg-[#62988b] flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-recycle text-white text-lg"></i>
+        <div class="py-16">
+            <h3 class="text-3xl font-bold text-center text-[#62988b] mb-12">Recursos Inteligentes</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md border border-[#d0eae4]">
+                    <div class="w-16 h-16 bg-[#62988b] text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM5 9a1 1 0 011-1h.5a1 1 0 011 1v1a1 1 0 01-1 1h-.5a1 1 0 01-1-1V9zM9 9a1 1 0 011-1h.5a1 1 0 011 1v1a1 1 0 01-1 1H10a1 1 0 01-1-1V9zM13 9a1 1 0 011-1h.5a1 1 0 011 1v1a1 1 0 01-1 1h-.5a1 1 0 01-1-1V9z" clip-rule="evenodd"></path></svg>
                     </div>
-                    <h3 class="text-[#62988b] text-center font-bold">Sustentável</h3>
+                    <h4 class="font-bold text-[#62988b] text-xl">Sensor de Hidratação</h4>
+                    <p class="mt-2 text-gray-600">Receba alertas no seu celular quando for a hora de beber água.</p>
                 </div>
-                <div class="p-6">
-                    <p class="text-gray-600 text-center">Feita com plástico 100% reciclado, reduzindo o impacto ambiental em até 70%</p>
-                </div>
-            </div>
-
-            <div class="border border-[#d0eae4] rounded-lg">
-                <div class="bg-[#d0eae4] p-4 rounded-t-lg">
-                    <div class="w-12 h-12 rounded-full bg-[#62988b] flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-heart text-white text-lg"></i>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-[#d0eae4]">
+                    <div class="w-16 h-16 bg-[#62988b] text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM5 10a5 5 0 1110 0 5 5 0 01-10 0z"></path></svg>
                     </div>
-                    <h3 class="text-[#62988b] text-center font-bold">Inteligente</h3>
+                    <h4 class="font-bold text-[#62988b] text-xl">Chip NFC</h4>
+                    <p class="mt-2 text-gray-600">Aproxime o celular para acessar dicas de saúde e sustentabilidade.</p>
                 </div>
-                <div class="p-6">
-                    <p class="text-gray-600 text-center">Sensor que avisa quando é hora de beber água para manter sua hidratação ideal</p>
-                </div>
-            </div>
-
-            <div class="border border-[#d0eae4] rounded-lg">
-                <div class="bg-[#d0eae4] p-4 rounded-t-lg">
-                    <div class="w-12 h-12 rounded-full bg-[#62988b] flex items-center justify-center mx-auto mb-3">
-                        <i class="fas fa-mobile-alt text-white text-lg"></i>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-[#d0eae4]">
+                    <div class="w-16 h-16 bg-[#62988b] text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-9a1 1 0 011-1h1a1 1 0 011 1v2a1 1 0 01-1 1h-1a1 1 0 01-1-1V9z"></path></svg>
                     </div>
-                    <h3 class="text-[#62988b] text-center font-bold">Conectada</h3>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 text-center">NFC para dicas personalizadas de hidratação e sustentabilidade no seu celular</p>
+                    <h4 class="font-bold text-[#62988b] text-xl">Material Reciclado</h4>
+                    <p class="mt-2 text-gray-600">Feita de plástico 100% reciclado, reduzindo o impacto ambiental.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Impact Section -->
-        <div class="border border-[#d0eae4] rounded-lg mb-16">
-            <div class="bg-[#d0eae4] p-4 rounded-t-lg">
-                <h3 class="text-[#62988b] text-center font-bold">Seu Impacto Positivo</h3>
-            </div>
-            <div class="p-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                    <div class="text-center">
-                        <i class="fas fa-tint text-[#62988b] text-2xl mx-auto mb-2 block"></i>
-                        <h4 class="font-bold text-[#62988b] text-2xl">2.5L</h4>
-                        <p class="text-sm text-gray-600">Água consumida hoje</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-recycle text-[#62988b] text-2xl mx-auto mb-2 block"></i>
-                        <h4 class="font-bold text-[#62988b] text-2xl">12</h4>
-                        <p class="text-sm text-gray-600">Garrafas economizadas</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-heart text-[#62988b] text-2xl mx-auto mb-2 block"></i>
-                        <h4 class="font-bold text-[#62988b] text-2xl">1.2kg</h4>
-                        <p class="text-sm text-gray-600">Plástico evitado</p>
-                    </div>
+        <div class="bg-white p-6 rounded-lg shadow-md border border-[#d0eae4] mb-16">
+            <h3 class="text-3xl font-bold text-center text-[#62988b] mb-8">Seu Impacto Positivo</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <img src="https://via.placeholder.com/100x100.png?text=2.5L" alt="Água consumida" class="mx-auto mb-4">
+                    <h4 class="font-bold text-[#62988b] text-2xl">2.5L</h4>
+                    <p class="text-sm text-gray-600">Água consumida hoje</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/100x100.png?text=12" alt="Garrafas economizadas" class="mx-auto mb-4">
+                    <h4 class="font-bold text-[#62988b] text-2xl">12</h4>
+                    <p class="text-sm text-gray-600">Garrafas economizadas</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/100x100.png?text=1.2kg" alt="Plástico evitado" class="mx-auto mb-4">
+                    <h4 class="font-bold text-[#62988b] text-2xl">1.2kg</h4>
+                    <p class="text-sm text-gray-600">Plástico evitado</p>
                 </div>
             </div>
         </div>
 
-        <!-- Email Form (Simulado) -->
         <div class="border border-[#d0eae4] rounded-lg mb-16">
             <div class="bg-[#d0eae4] p-4 rounded-t-lg">
                 <h3 class="text-[#62988b] text-center font-bold">Fique por Dentro</h3>
@@ -121,7 +169,6 @@
             </div>
         </div>
 
-        <!-- Footer -->
         <footer class="text-center text-gray-600 text-sm py-8">
             <p>EcoBottle - Inovação sustentável para um futuro melhor</p>
             <p class="mt-2">© 2023 EcoBottle. Todos os direitos reservados.</p>
